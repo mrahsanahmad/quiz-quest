@@ -10,6 +10,7 @@ import { useQuizContext } from "../../context/QuizContext.jsx";
 import Slider from "@react-native-community/slider";
 import Pawprint from "../../assets/images/pawprint.png";
 import getStyles from "./Starter.style.js";
+import MathView from 'react-native-math-view';
 
 const questionTypes = ["True or False", "Multiple Choice"];
 
@@ -27,6 +28,19 @@ const Starter = () => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.innerContainer}>
+
+				<View style={{ marginBottom: 20 }}>
+					<MathView math={'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}'} 	/>	
+				</View>
+				
+				<View style={{ marginBottom: 20 }}>	
+					<MathView math='\\cos\left(x\right)=\frac{b}{c}' /> 
+				</View>
+				
+				<View style={{ marginBottom: 20 }}>	
+					<MathView math='\\cos\left(x=\frac{b}{c}\right)' /> 
+				</View>
+
 				<MaskedView
 					style={{ flex: 1, flexDirection: "row", height: "100%" }}
 					maskElement={
