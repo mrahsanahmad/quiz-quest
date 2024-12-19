@@ -10,7 +10,8 @@ import { useQuizContext } from "../../context/QuizContext.jsx";
 import Slider from "@react-native-community/slider";
 import Pawprint from "../../assets/images/pawprint.png";
 import getStyles from "./Starter.style.js";
-import MathView from 'react-native-math-view';
+
+import MathView, { MathText } from 'react-native-math-view';
 
 const questionTypes = ["True or False", "Multiple Choice"];
 
@@ -30,15 +31,10 @@ const Starter = () => {
 			<View style={styles.innerContainer}>
 
 				<View style={{ marginBottom: 20 }}>
-					<MathView math={'x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}'} 	/>	
-				</View>
-				
-				<View style={{ marginBottom: 20 }}>	
-					<MathView math='\\cos\left(x\right)=\frac{b}{c}' /> 
-				</View>
-				
-				<View style={{ marginBottom: 20 }}>	
-					<MathView math='\\cos\left(x=\frac{b}{c}\right)' /> 
+					<MathText
+						value={"This text includes math notations and should be wrapped correctly for \\( \\alpha \\) and $\\beta$ within the view. \nThe following formula shouldn't be inline:$$x_{1,2} = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}$$However the following formula should be inline with the text: \\( a^2 + b^2 = c^2 \\)"}
+						direction="ltr"
+					/>
 				</View>
 
 				<MaskedView
